@@ -138,34 +138,14 @@ Para que ROS 2 reconozca los scripts como ejecutables de consola, debes editar e
 
 Abre el archivo con tu editor preferido (nano, gedit, VS Code) y modifica la sección `entry_points` para registrar los scripts:
 
-```python
-from setuptools import find_packages, setup
 
-package_name = 'grupo01_xarm6_kinematics'
-
-setup(
-    name=package_name,
-    version='0.0.0',
-    packages=find_packages(exclude=['test']),
-    data_files=[
-        ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
-    ],
-    install_requires=['setuptools'],
-    zip_safe=True,
-    maintainer='Ariana Reyes, Maria Fernanda Cortez',
-    maintainer_email='grupo01@ucb.edu.bo',
-    description='Paquete de Cinematica Directa e Inversa para xArm6',
-    license='Apache-2.0',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'fk_node = grupo01_xarm6_kinematics.fk_node:main',
             'ik_node = grupo01_xarm6_kinematics.ik_node:main',
         ],
     },
-)
+
 
 ```
 
@@ -185,7 +165,6 @@ Para compilar el nuevo paquete y actualizar el workspace:
 ```bash
 cd ~/grupo_01_xarm6_ws
 source /opt/ros/jazzy/setup.bash
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 colcon build --symlink-install
 source install/setup.bash
 
