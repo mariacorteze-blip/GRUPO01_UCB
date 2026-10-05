@@ -119,16 +119,17 @@ cd ~/grupo_01_xarm6_ws/src/grupo01_xarm6_kinematics/grupo01_xarm6_kinematics
 
 ```
 
-Crea o copia dentro de esta ubicación los archivos de tus nodos:
+Dentro de la carpeta donde se clonó el git, busca la carpeta src/grupo01_xarm6_kinematics/grupo01_xarm6_kinematics, ahí se tienen los siguientes .py
 
 * `fk_node.py` (Nodo de Cinemática Directa)
 * `ik_node.py` (Nodo de Cinemática Inversa)
+
+Copia y pegalos en ~/grupo_01_xarm6_ws/src/grupo01_xarm6_kinematics/grupo01_xarm6_kinematics
 
 Otorga permisos de ejecución a los archivos:
 
 ```bash
 chmod +x fk_node.py ik_node.py
-
 ```
 
 ### Paso 4.3: Configurar el archivo `setup.py`
