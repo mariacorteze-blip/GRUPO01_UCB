@@ -93,7 +93,7 @@ Para verificar que el entorno está activo correctamente:
 ```bash
 printenv RMW_IMPLEMENTATION
 ros2 pkg list | grep grupo01_xarm6_bringup
-
+```
 
 ## 4. CREACIÓN DEL PAQUETE Y NODOS DE CINEMÁTICA (`grupo01_xarm6_kinematics`)
 
@@ -130,6 +130,8 @@ Otorga permisos de ejecución a los archivos:
 
 ```bash
 chmod +x fk_node.py ik_node.py
+colcon build
+source install/setup.bash
 ```
 
 ### Paso 4.3: Configurar el archivo `setup.py`
@@ -148,7 +150,7 @@ Abre el archivo con tu editor preferido (nano, gedit, VS Code) y modifica la sec
     },
 
 
-```
+
 
 ### Paso 4.4: Compilación del Workspace
 
@@ -157,6 +159,7 @@ Para compilar el nuevo paquete y actualizar el workspace:
 **Opción rápida:**
 
 ```bash
+cd ~/grupo_01_xarm6_ws
 ./recompilar.sh
 
 ```
